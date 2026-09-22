@@ -59,10 +59,12 @@
     .unfold-hdr{padding:3rem 3.5rem 2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
     .unfold-lbl{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
     .unfold-ttl{font-weight:700;font-size:1.8rem;letter-spacing:-.03em}
-    .unfold-body{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;padding:3rem 3.5rem}
+    .unfold-body{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;padding:3rem 3.5rem;align-items:start}
     .unfold-txt p{font-size:1rem;color:var(--dim);line-height:1.85;margin-bottom:1.25rem}
     .unfold-txt strong{color:var(--text)}
-    .unfold-cards{display:flex;flex-direction:column;gap:.75rem}
+    .unfold-profile{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+    .profile-img{width:160px;height:160px;border-radius:50%;border:2px solid var(--border);object-fit:cover}
+    .unfold-cards{display:flex;flex-direction:column;gap:.75rem;width:100%}
     .info-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem}
     .info-card:hover{border-color:rgba(196,93,62,.3)}
     .info-lbl{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
@@ -82,11 +84,15 @@
     .proj{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;padding:2rem 2.5rem;background:rgba(255,255,255,.02);text-decoration:none;color:inherit;cursor:pointer}
     .proj:hover{background:rgba(255,255,255,.04)}
     .proj-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--dim);width:30px}
+    .proj-main{min-width:0}
     .proj-ttl{font-weight:700;font-size:1.1rem;margin-bottom:.3rem}
-    .proj-desc{font-size:.85rem;color:var(--dim);line-height:1.6}
+    .proj-desc{font-size:.85rem;color:var(--dim);line-height:1.6;margin-bottom:.6rem}
     .proj-right{display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
     .proj-tags{display:flex;flex-wrap:wrap;gap:.3rem;justify-content:flex-end}
     .proj-tags span{font-family:'JetBrains Mono',monospace;font-size:.55rem;padding:.2rem .5rem;border:1px solid var(--border);border-radius:4px;color:var(--dim)}
+    .proj-links{display:flex;gap:.5rem}
+    .proj-links a{font-family:'JetBrains Mono',monospace;font-size:.55rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:4px;color:var(--dim);text-decoration:none}
+    .proj-links a:hover{color:var(--accent);border-color:var(--accent)}
     .proj-arrow{font-size:1.2rem;color:var(--dim)}
     .proj:hover .proj-arrow{color:var(--accent)}
 
@@ -193,13 +199,16 @@
       <div class="unfold-body">
         <div class="unfold-txt">
           <p>I'm <strong>Abhinav Jha</strong>, a full-stack developer and designer. I build web applications that are fast, accessible, and don't make people think twice about how to use them.</p>
-          <p>I work across the stack, <strong>React and Next.js</strong> on the frontend, <strong>Node.js and PostgreSQL</strong> on the backend. I also design in <strong>Figma</strong>, so I think about the whole product, not just the code.</p>
-          <p>I'm currently freelancing and open to interesting projects. If you're building something that needs both engineering and design thinking, let's talk.</p>
+          <p>I work across the stack, <strong>React and Next.js</strong> on the frontend, <strong>Node.js and Python</strong> on the backend. I also design in <strong>Figma</strong>, so I think about the whole product, not just the code.</p>
+          <p>Currently building <strong>Nirvaan</strong>, an AI-powered block planning system for Indian Railways (SIH 2026), and <strong>Commutify</strong>, a Delhi NCR transit intelligence platform. Open to interesting projects.</p>
         </div>
-        <div class="unfold-cards">
-          <div class="info-card"><div class="info-lbl">Location</div><div class="info-val">India, <strong>Remote-first</strong></div></div>
-          <div class="info-card"><div class="info-lbl">Focus</div><div class="info-val"><strong>Full-stack web apps</strong>, design systems, UI engineering</div></div>
-          <div class="info-card"><div class="info-lbl">Interests</div><div class="info-val">Open source, system design, <strong>creative coding</strong></div></div>
+        <div class="unfold-profile">
+          <img src="https://avatars.githubusercontent.com/u/206326802?v=4" alt="Abhinav Jha" class="profile-img">
+          <div class="unfold-cards">
+            <div class="info-card"><div class="info-lbl">Location</div><div class="info-val">India, <strong>Remote-first</strong></div></div>
+            <div class="info-card"><div class="info-lbl">Focus</div><div class="info-val"><strong>Full-stack web apps</strong>, AI/ML, transit systems</div></div>
+            <div class="info-card"><div class="info-lbl">Interests</div><div class="info-val">Open source, system design, <strong>creative coding</strong></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -209,10 +218,64 @@
     <div class="sec-lbl">02 — Work</div>
     <h2 class="sec-ttl">Selected projects.</h2>
     <div class="proj-list">
-      <a href="#" class="proj"><div class="proj-num">01</div><div><div class="proj-ttl">E-Commerce Platform</div><div class="proj-desc">Full-stack storefront with real-time inventory, AI recommendations, and Stripe checkout.</div></div><div class="proj-right"><div class="proj-tags"><span>React</span><span>Node.js</span><span>Stripe</span></div><div class="proj-arrow">&nearr;</div></div></a>
-      <a href="#" class="proj"><div class="proj-num">02</div><div><div class="proj-ttl">Analytics Dashboard</div><div class="proj-desc">Real-time dashboard with interactive D3.js charts, custom reports, and team collaboration.</div></div><div class="proj-right"><div class="proj-tags"><span>Next.js</span><span>D3.js</span><span>Python</span></div><div class="proj-arrow">&nearr;</div></div></a>
-      <a href="#" class="proj"><div class="proj-num">03</div><div><div class="proj-ttl">Social Platform</div><div class="proj-desc">Community app with real-time messaging, content feeds, and engagement analytics.</div></div><div class="proj-right"><div class="proj-tags"><span>React Native</span><span>Firebase</span></div><div class="proj-arrow">&nearr;</div></div></a>
-      <a href="#" class="proj"><div class="proj-num">04</div><div><div class="proj-ttl">AI Content Tool</div><div class="proj-desc">Content generator for blogs, social posts, and marketing copy with brand consistency.</div></div><div class="proj-right"><div class="proj-tags"><span>TypeScript</span><span>OpenAI</span></div><div class="proj-arrow">&nearr;</div></div></a>
+      <a href="https://nirvaan-railsaathi.vercel.app" target="_blank" rel="noopener noreferrer" class="proj">
+        <div class="proj-num">01</div>
+        <div class="proj-main">
+          <div class="proj-ttl">Nirvaan</div>
+          <div class="proj-desc">AI-Powered Automatic Block Planning for Indian Railways. SIH 2026 Problem #26027 for Ministry of Railways. Automates maintenance scheduling across 15 zones with 300+ real trains, genetic algorithms, and MILP solvers.</div>
+          <div class="proj-links">
+            <a href="https://nirvaan-railsaathi.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://github.com/Youngmaster0304/nirvaan" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-tags"><span>Python</span><span>FastAPI</span><span>SQLite</span></div>
+          <div class="proj-arrow">&nearr;</div>
+        </div>
+      </a>
+      <a href="https://commutify-weld.vercel.app" target="_blank" rel="noopener noreferrer" class="proj">
+        <div class="proj-num">02</div>
+        <div class="proj-main">
+          <div class="proj-ttl">Commutify</div>
+          <div class="proj-desc">Delhi NCR Transit & Smart Mobility Platform. Multi-modal metro pathfinding, DTC bus routing with 1-transfer connections, crowd congestion prediction, AI chatbot powered by Cerebras Gemma 4, and lost & found tracking.</div>
+          <div class="proj-links">
+            <a href="https://commutify-weld.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://github.com/Youngmaster0304/commutify" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-tags"><span>React</span><span>Node.js</span><span>Docker</span></div>
+          <div class="proj-arrow">&nearr;</div>
+        </div>
+      </a>
+      <a href="https://github.com/Youngmaster0304/genesis-ai" target="_blank" rel="noopener noreferrer" class="proj">
+        <div class="proj-num">03</div>
+        <div class="proj-main">
+          <div class="proj-ttl">Genesis AI</div>
+          <div class="proj-desc">Transform any idea into a complete R&D innovation package in seconds. Powered by 6 parallel AI agents generating research, patents, market analysis, architecture, pitch deck and more.</div>
+          <div class="proj-links">
+            <a href="https://github.com/Youngmaster0304/genesis-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-tags"><span>TypeScript</span><span>AI Agents</span></div>
+          <div class="proj-arrow">&nearr;</div>
+        </div>
+      </a>
+      <a href="https://github.com/Youngmaster0304/linkedin-agent" target="_blank" rel="noopener noreferrer" class="proj">
+        <div class="proj-num">04</div>
+        <div class="proj-main">
+          <div class="proj-ttl">LinkedIn Agent</div>
+          <div class="proj-desc">AI-powered LinkedIn content agent that generates posts, creates images, publishes content, and tracks engagement automatically.</div>
+          <div class="proj-links">
+            <a href="https://github.com/Youngmaster0304/linkedin-agent" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-tags"><span>Python</span><span>AI/ML</span></div>
+          <div class="proj-arrow">&nearr;</div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -224,10 +287,10 @@
       <div class="sk-item"><div class="sk-header"><div class="sk-icon">TS</div><div class="sk-name">TypeScript</div></div><div class="sk-cat">Frontend</div><p class="sk-desc">Type-safe, maintainable code.</p></div>
       <div class="sk-item"><div class="sk-header"><div class="sk-icon">T</div><div class="sk-name">Tailwind CSS</div></div><div class="sk-cat">Frontend</div><p class="sk-desc">Utility-first, design tokens.</p></div>
       <div class="sk-item"><div class="sk-header"><div class="sk-icon">N</div><div class="sk-name">Node.js</div></div><div class="sk-cat">Backend</div><p class="sk-desc">APIs, serverless, edge.</p></div>
-      <div class="sk-item"><div class="sk-header"><div class="sk-icon">Py</div><div class="sk-name">Python</div></div><div class="sk-cat">Backend</div><p class="sk-desc">Pipelines, automation, ML.</p></div>
+      <div class="sk-item"><div class="sk-header"><div class="sk-icon">Py</div><div class="sk-name">Python</div></div><div class="sk-cat">Backend</div><p class="sk-desc">FastAPI, ML pipelines, automation.</p></div>
       <div class="sk-item"><div class="sk-header"><div class="sk-icon">Db</div><div class="sk-name">PostgreSQL</div></div><div class="sk-cat">Backend</div><p class="sk-desc">Schema design, indexing, query optimization.</p></div>
       <div class="sk-item"><div class="sk-header"><div class="sk-icon">F</div><div class="sk-name">UI/UX</div></div><div class="sk-cat">Design</div><p class="sk-desc">Wireframes to high-fidelity.</p></div>
-      <div class="sk-item"><div class="sk-header"><div class="sk-icon">C</div><div class="sk-name">AWS</div></div><div class="sk-cat">DevOps</div><p class="sk-desc">CI/CD, containers, IaC.</p></div>
+      <div class="sk-item"><div class="sk-header"><div class="sk-icon">C</div><div class="sk-name">Docker / AWS</div></div><div class="sk-cat">DevOps</div><p class="sk-desc">CI/CD, containers, IaC.</p></div>
     </div>
   </section>
 
@@ -249,8 +312,8 @@
         <p class="con-msg">Got a project<br>in mind?<br><span class="accent">Let's build it.</span></p>
         <div class="c-links">
           <a href="mailto:abhinav@example.com" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>abhinav@example.com</a>
-          <a href="https://github.com/abhinavjha" target="_blank" rel="noopener noreferrer" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>github.com/abhinavjha</a>
-          <a href="https://linkedin.com/in/abhinavjha" target="_blank" rel="noopener noreferrer" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/abhinavjha</a>
+          <a href="https://github.com/Youngmaster0304" target="_blank" rel="noopener noreferrer" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>github.com/Youngmaster0304</a>
+          <a href="https://www.linkedin.com/in/abhinav-jha-84a55a274/" target="_blank" rel="noopener noreferrer" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/abhinav-jha</a>
         </div>
       </div>
       <form class="form" onsubmit="handleSubmit(event)">
@@ -265,8 +328,8 @@
   <div class="footer">
     <div class="footer-l">&copy; 2026 Abhinav Jha</div>
     <div class="footer-r">
-      <a href="https://github.com/abhinavjha" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://linkedin.com/in/abhinavjha" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/Youngmaster0304" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/abhinav-jha-84a55a274/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="mailto:abhinav@example.com">Email</a>
       <a href="#">Terms</a>
       <a href="#">Privacy</a>
